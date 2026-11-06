@@ -1,0 +1,6 @@
+{
+  "name": "popper",
+  "description": "Popups that one key hides and shows again, the last first, after popper.el",
+  "e8": "0.3.1",
+  "requires": {}
+}
