@@ -24,6 +24,9 @@
 import { current as projectCurrent } from "project";
 import { PerBuffer } from "subr";
 
+/** A window as the E8 running gives one: an object, or in E8 0.5.8 and before a number. */
+type Win = ReturnType<typeof e8.selectedWindow>;
+
 const defvar = (name: string, value: e8.Value, doc: string) => e8.defineVariable({ name, value, doc });
 defvar(
   "popper-reference-buffers",
@@ -37,7 +40,7 @@ defvar("popper-group-function", null, "A function of no arguments giving the gro
 e8.defineHook("popper-open-popup-hook", "Functions called in a popup's buffer when popper opens it.");
 
 type Status = "popup" | "raised" | "user-popup" | "suppressed";
-type Popup = { window: number | undefined; buffer: string };
+type Popup = { window: Win | undefined; buffer: string };
 type Group = string | undefined;
 
 /** Each buffer's popper-popup-status. */
@@ -160,7 +163,7 @@ function findBuriedPopups(): void {
 }
 
 /** Takes a popup's window away, as popper--delete-popup: it quits, as quit-window does. */
-function deletePopup(window: number | undefined): void {
+function deletePopup(window: Win | undefined): void {
   if (window === undefined || !e8.windowList().includes(window)) return;
   const selected = e8.selectedWindow();
   e8.selectWindow(window);
