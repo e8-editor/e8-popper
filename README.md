@@ -1,6 +1,13 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/e8-editor/e8/main/docs/assets/banner-ports-dark.png">
+  <img alt="E8 package ports" src="https://raw.githubusercontent.com/e8-editor/e8/main/docs/assets/banner-ports-light.png">
+</picture>
+
+Part of the [E8 package ports](https://github.com/e8-editor/e8#packages): Emacs packages ported to [E8](https://github.com/e8-editor/e8) and maintained with it. This is a port of [popper](https://github.com/karthink/popper) 0.4.8 by Karthik Chikmagalur. The design and the original code are theirs; the port keeps upstream's licence, the GNU General Public License version 3 or later.
+
 # e8-popper
 
-Popups for [E8](https://github.com/e8-editor/e8): buffers you name, such as `*Messages*`, help or a REPL, become popups that one key hides and shows again, the last one first, and another key cycles through. A port of [popper](https://github.com/karthink/popper) 0.4.8.
+Popups for [E8](https://github.com/e8-editor/e8): buffers you name, such as `*Messages*`, help or a REPL, become popups that one key hides and shows again, the last one first, and another key cycles through.
 
 ## Installing
 
@@ -44,7 +51,7 @@ Variables:
 
 ## Credit
 
-This is a port to E8 of [popper](https://github.com/karthink/popper) 0.4.8, by Karthik Chikmagalur, copyright the Free Software Foundation, and distributed in GNU ELPA, under the GNU General Public License version 3 or later. It is not the upstream authors' work as published, and they do not endorse it: report problems with the port here, not upstream.
+popper 0.4.8 is copyright the Free Software Foundation and distributed in GNU ELPA, under the GNU General Public License version 3 or later. This port is not the upstream authors' work as published, and they do not endorse it: report problems with the port here, not upstream.
 
 ## Developing
 
