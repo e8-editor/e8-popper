@@ -1,0 +1,41 @@
+popper NEWS -- history of user-visible changes.
+
+This is the news of e8-popper, the E8 port of popper.  'C-h P' shows
+it under the package's description.
+
+
+* Changes in popper 0.1.0
+
+This is the first release, a port of popper 0.4.8.  It needs E8 0.3.1
+or newer.
+
+** 'popper-mode' makes the buffers you name popups one key toggles.
+Popper binds no keys: bind 'popper-toggle' and 'popper-cycle'
+yourself.
+
+** 'popper-reference-buffers' says which buffers are popups.
+An entry is a regexp the name matches, a major mode, or a function of
+the name.  An entry [entry, "hide"] keeps those popups hidden when
+they open, until 'popper-toggle' shows them.
+
+** 'popper-toggle' hides the popup shown last, or shows the last hidden.
+With 'C-u' it shows the next popup beside the open one; with 'C-u C-u'
+it hides them all, or shows all of the group when none is open.
+
+** 'popper-cycle' and 'popper-cycle-backwards' show the next popup.
+They hide the open popup first.
+
+** 'popper-toggle-type' makes a buffer a popup, or a popup a buffer.
+
+** 'popper-kill-latest-popup' kills the popup shown last and its window.
+
+** 'popper-group-function' groups popups by project or by directory.
+Set it to 'popper-group-by-project' or 'popper-group-by-directory';
+toggling and cycling then see only the current group's popups.
+
+** A popup's mode line starts with " POP".
+'popper-mode-line' and 'popper-mode-line-position' change it.
+
+** 'popper-display-control' says whether popper shows popups itself.
+
+** 'popper-open-popup-hook' runs in a popup's buffer when it is shown.
